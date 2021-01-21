@@ -1,12 +1,12 @@
-!ifdef NIGHTLY
-!define BASE_DIR "..\Nightly"
+!ifdef DEBUG
+!define BASE_DIR "..\Debug"
 !else
 !define BASE_DIR "..\Release"
 !endif
 !define SRC_DIR "..\Revive"
 !define DASH_DIR "..\ReviveOverlay"
 
-!ifdef NIGHTLY
+!ifdef DEBUG
 Function .onInit
     MessageBox MB_YESNO "Looks like you downloaded a beta release, these releases are unstable and only intended for experimentation.$\r$\n$\r$\nDo you want to install a stable release instead?" IDYES abort IDNO continue
     abort:
@@ -97,7 +97,10 @@ install:
   File /r /x "${BASE_DIR}\bearer" "${BASE_DIR}\*.dll"
   File /r "${BASE_DIR}\*.jpg"
   File /r "${BASE_DIR}\Qt*"
-  
+  File /r "${BASE_DIR}\*.ilk"  
+  File /r "${BASE_DIR}\*.pdb"
+  File /r "${BASE_DIR}\*.lib"
+  File /r "${BASE_DIR}\*.exp"   
   SetOutPath "$INSTDIR\Input"
   
   ; Application data
