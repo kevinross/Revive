@@ -42,8 +42,8 @@ build_script:
         msbuild Revive.sln /t:Build /p:Configuration=Release /p:Platform=x64
         msbuild Revive.sln /t:Build /p:Configuration=Release /p:Platform=x86
       } Else {
-        msbuild Revive.sln /t:Build /p:Configuration=Nightly /p:Platform=x64
-        msbuild Revive.sln /t:Build /p:Configuration=Nightly /p:Platform=x86
+        msbuild Revive.sln /t:Build /p:Configuration=Debug /p:Platform=x64
+        msbuild Revive.sln /t:Build /p:Configuration=Debug /p:Platform=x86
       }
       
 after_build:
