@@ -83,5 +83,5 @@ after_build:
 artifacts:
   - path: Installer\Revive_all.zip
     name: Revive Symbols
-  - path: Installer\Revive.msi
+  - path: Installer\ReviveInstaller.exe
     name: Revive Installer
