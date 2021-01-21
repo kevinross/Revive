@@ -71,6 +71,7 @@ after_build:
   - ps: |
       cd C:\Projects\Revive\Installer
       $env:Path += ";C:\Program Files (x86)\NSIS"
+      makensis /DDEBUG Revive.nsi
       If ($env:APPVEYOR_REPO_TAG -eq "true") {
         makensis Revive.nsi
       }
@@ -82,3 +83,5 @@ after_build:
 artifacts:
   - path: Installer\Revive_all.zip
     name: Revive Symbols
+  - path: Installer\Revive.msi
+    name: Revive Installer
